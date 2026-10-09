@@ -1,0 +1,18 @@
+{
+  "name": "chefbear",
+  "displayName": "ChefBear",
+  "version": "1.0.0",
+  "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses your ChefBear menus through the official ChefBear connector to import menu photos, read saved menus and share them with friends.",
+  "author": {
+    "name": "Awesome Bears",
+    "url": "https://awesome-bears.com"
+  },
+  "homepage": "https://github.com/RaycarlLei/chefbear-skill",
+  "repository": "https://github.com/RaycarlLei/chefbear-skill",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://chef-bear.com/privacy/",
+  "termsOfServiceUrl": "https://chef-bear.com/terms/",
+  "supportUrl": "https://chef-bear.com/support",
+  "documentationUrl": "https://chef-bear.com/claude/",
+  "keywords": ["restaurant", "menu", "food", "ordering", "travel", "mcp"]
+}

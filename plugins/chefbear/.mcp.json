@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "chefbear": {
+      "type": "http",
+      "url": "https://chef-bear.com/api/menu-sharing/mcp"
+    }
+  }
+}

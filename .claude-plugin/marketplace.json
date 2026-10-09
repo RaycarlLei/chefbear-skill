@@ -1,0 +1,28 @@
+{
+  "name": "chefbear",
+  "owner": {
+    "name": "Awesome Bears",
+    "email": "contact@awesome-bears.com"
+  },
+  "metadata": {
+    "description": "ChefBear for Claude: talk through restaurant menus and decide what to order with your ChefBear menus.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "chefbear",
+      "source": "./plugins/chefbear",
+      "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses your ChefBear menus through the official ChefBear connector to import menu photos, read saved menus and share them with friends.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Awesome Bears",
+        "url": "https://awesome-bears.com"
+      },
+      "homepage": "https://github.com/RaycarlLei/chefbear-skill",
+      "repository": "https://github.com/RaycarlLei/chefbear-skill",
+      "license": "MIT",
+      "keywords": ["restaurant", "menu", "food", "ordering", "travel", "mcp"],
+      "category": "lifestyle"
+    }
+  ]
+}
