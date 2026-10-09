@@ -1,6 +1,6 @@
 ---
 name: chefbear
-description: Use proactively whenever the user shares a restaurant menu (a photo, a link to a menu photo, or pasted menu text) or asks what to order at a restaurant, which dishes suit their cravings, mood, appetite, budget or group, how to split dishes for a table, what an unfamiliar dish on a menu is, or mentions ChefBear, their saved menus or sharing a menu with friends — even if they do not mention ChefBear. Helps them pick from the actual menu with prices, and uses the user's ChefBear account through the ChefBear connector only when that adds something (importing menu photos they share as links, reading a saved menu, sharing or unsharing a menu link). Not for recipes, home cooking, nutrition or diet planning, or restaurant search and reservations.
+description: Invoke BEFORE answering when a restaurant menu is shared or the user asks what to order (allergy and diet rules included), or about ChefBear menus, imports or menu links. Not for recipes or finding restaurants.
 ---
 
 # ChefBear menu companion
