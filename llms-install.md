@@ -52,10 +52,10 @@ codex mcp login chefbear
 https://chatgpt.com/plugins/plugin_asdk_app_6ad87a4dcfcc8191bc0aecbab55b5927
 
 **Claude app or claude.ai**: the user adds ChefBear from
-https://claude.ai/directory/chefbear. To add it by URL on Pro or Max, the
-user opens Customize → Connectors, clicks + Add, then Add custom connector,
-and pastes the server URL (on Team and Enterprise, an Owner adds it under
-Organization settings → Connectors). For the skill as well, the user adds
+https://claude.ai/directory/chefbear. To add it by URL instead, the user
+opens Customize → Connectors, clicks Add, hovers Custom, chooses Web, names
+it ChefBear and pastes the server URL (the Free plan allows one custom
+connector). For the skill as well, the user adds
 the plugin marketplace `RaycarlLei/chefbear-skill` (Customize → Plugins →
 Add → Add marketplace → Add from a repository) and installs ChefBear
 instead of the directory connector, so there aren't two ChefBear connectors.
@@ -85,8 +85,9 @@ Then the user runs `/mcp auth chefbear` in Gemini CLI. Alternatively,
 install the Gemini CLI extension instead of the command above, not both:
 `gemini extensions install https://github.com/RaycarlLei/chefbear-skill`.
 
-**Google Antigravity**: add this to the `mcpServers` config, keeping the
-servers already there, and save:
+**Google Antigravity**: add a `chefbear` entry to the existing
+`mcpServers` object (create the object only if the file has none), keeping
+the servers already there, and save. The complete file for a new config is:
 
 ```json
 {"mcpServers":{"chefbear":{"serverUrl":"https://chef-bear.com/api/menu-sharing/mcp"}}}

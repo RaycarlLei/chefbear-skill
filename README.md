@@ -28,9 +28,10 @@ This repository holds the server's public listing files, the open-source
 ### Claude (claude.ai, desktop and mobile)
 
 Add ChefBear from the [Claude directory](https://claude.ai/directory/chefbear).
-To add it by URL on Pro or Max, open **Customize → Connectors**, click
-**+ Add**, then **Add custom connector**, and paste the server URL. On Team
-and Enterprise, an Owner adds it under **Organization settings → Connectors**.
+To add it by URL instead, open **Customize → Connectors**, click **Add**,
+hover **Custom**, choose **Web**, name it ChefBear and paste the server URL
+([Claude's steps](https://support.claude.com/en/articles/11176164); the Free
+plan allows one custom connector).
 
 To get the skill as well, add this repository as a plugin marketplace
 instead of the directory connector, so you don't end up with two ChefBear

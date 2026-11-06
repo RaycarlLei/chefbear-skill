@@ -4,7 +4,7 @@ Paste one of these into Claude. In Claude Code it installs the plugin itself;
 in the Claude app or claude.ai it guides you through two short steps. The
 same prompts are on ChefBear's setup guide, https://www.chef-bear.com/ai/.
 
-Plugins need a paid Claude plan
+In the Claude app, plugins need a paid Claude plan
 ([Use plugins in Claude](https://support.claude.com/en/articles/13837440)).
 On the Free plan, add ChefBear from the
 [Claude directory](https://claude.ai/directory/chefbear) instead.

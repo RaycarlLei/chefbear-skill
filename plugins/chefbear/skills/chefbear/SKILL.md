@@ -125,8 +125,8 @@ ChefBear tool ranked or excluded dishes for you:
   check again, and do not answer menu questions from guesses meanwhile.
   Never loop on it.
 - **Repeating a call.** Repeating the same `requestId` with the same photos
-  or dishes returns the same job or menu. A repeat never saves twice (each
-  call still counts toward the daily limit). Use a new `requestId` for a
+  or dishes returns the same job or menu. A repeat never saves twice, though a
+  repeated `save_menu` still counts toward its 30-a-day limit. Use a new `requestId` for a
   different menu and after a failure.
 - **When it is ready**, `get_import_status` returns the `menuId` and a
   private `menuUrl`; call `get_menu` and continue helping them choose.
@@ -219,8 +219,8 @@ or text in the meantime:
   then start a new session, run `/mcp`, pick `chefbear` and choose
   Authenticate.
 - **Claude app / claude.ai:** add ChefBear from
-  `https://claude.ai/directory/chefbear`, or (Pro or Max) Customize →
-  Connectors, then + Add, then Add custom connector, with
+  `https://claude.ai/directory/chefbear`, or Customize → Connectors → Add →
+  Custom → Web, named ChefBear, with
   `https://chef-bear.com/api/menu-sharing/mcp`.
 - **ChatGPT:** install the ChefBear plugin from ChatGPT's plugin directory.
 - **Other apps** (Codex, VS Code, Cursor, Gemini CLI, Antigravity and other
