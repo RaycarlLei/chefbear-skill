@@ -5,15 +5,15 @@
     "email": "contact@awesome-bears.com"
   },
   "metadata": {
-    "description": "ChefBear for Claude: talk through restaurant menus and decide what to order with your ChefBear menus.",
-    "version": "1.0.0"
+    "description": "ChefBear for Claude: the ChefBear MCP server and skill for deciding what to order from restaurant menus.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "chefbear",
       "source": "./plugins/chefbear",
-      "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses your ChefBear menus through the official ChefBear connector to import menu photos, read saved menus and share them with friends.",
-      "version": "1.0.0",
+      "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses the official ChefBear MCP server to save, find, read and share your ChefBear menus and, with your permission, your taste profile.",
+      "version": "1.1.0",
       "author": {
         "name": "Awesome Bears",
         "url": "https://awesome-bears.com"

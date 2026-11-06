@@ -1,29 +1,30 @@
-# ChefBear for Claude
+# ChefBear plugin for Claude
 
-Open-source Claude plugin and Agent Skill for [ChefBear](https://chef-bear.com/),
-the iPhone app that turns restaurant menus into structured, translated menus
-and helps you decide what to order. Show Claude a menu, tell it what you're
-in the mood for, and it picks two or three dishes from the actual menu with
-prices. When it helps, it uses your own ChefBear account to import menu
-photos you share as links, read your saved menus and share a menu with
-friends.
+Open-source Claude plugin for [ChefBear](https://www.chef-bear.com/), the
+iPhone app that turns restaurant menus into structured, translated menus and
+helps you decide what to order. It adds:
 
-- **Skill** `chefbear`: tells Claude when and how to help you choose from a
-  menu, proactively, without you having to mention ChefBear.
-- **Connector**: the official ChefBear MCP server
-  `https://chef-bear.com/api/menu-sharing/mcp` (OAuth 2.1 + PKCE). You approve
-  the connection in the ChefBear iPhone app. No password, code or token ever
-  goes into a chat.
+- **The ChefBear MCP server** `https://chef-bear.com/api/menu-sharing/mcp`
+  (OAuth 2.1 with PKCE). You approve the connection in the ChefBear iPhone
+  app. No password, code or token ever goes into a chat.
+- **The `chefbear` skill**, which tells Claude when and how to help you
+  choose from a menu, without you having to mention ChefBear.
+
+For other AI apps (ChatGPT, Codex, VS Code, Cursor, Gemini CLI, Antigravity),
+see the [main README](../../README.md#install).
 
 ## What it does
 
 | You | Claude |
 |---|---|
-| share a menu photo in the chat and say what you feel like | reads it and suggests two or three dishes that fit, with prices |
-| share a link to a menu photo and ask to save it | imports it into a private ChefBear menu (uses your recognition allowance) |
-| ask about a saved ChefBear menu | reads it (no recognition, no allowance) and helps you pick |
-| ask to share a menu with friends | makes a public link after telling you anyone with it can see the dishes and prices |
-| ask to stop sharing | turns the link off; your private menu stays |
+| share a menu photo or text and say what you feel like | suggests two or three dishes that fit, with prices |
+| ask to save a menu from the chat | saves the dishes it read as a private ChefBear menu, without using a scan |
+| share a link to a menu photo and ask ChefBear to read it | imports it into a private menu (uses one scan from your allowance) |
+| mention a menu you saved in ChefBear | finds it among your saved menus and helps you pick |
+| send a ChefBear share link | reads what the link shows |
+| ask what would suit you | uses the taste profile you saved in ChefBear, if you allowed it |
+| ask it to remember a taste or an allergy | adds it to your ChefBear taste profile |
+| ask to share a menu, or to stop sharing | turns a public link on, after telling you anyone with it can see the dishes and prices, or off |
 
 Claude works from what the menu says. It never claims a dish is safe for an
 allergy or diet, and reminds you to confirm ingredients with the restaurant
@@ -43,46 +44,34 @@ chat and helps you choose.
 ### Claude Code
 
 ```
-/plugin marketplace add RaycarlLei/chefbear-skill
-/plugin install chefbear@chefbear
+claude plugin marketplace add RaycarlLei/chefbear-skill
+claude plugin install chefbear@chefbear
 ```
 
 Then run `/mcp`, choose **chefbear** → **Authenticate**, and approve in the
-ChefBear app with the code shown on the connect page.
+ChefBear app with the code shown on ChefBear's sign-in page.
 
 ### Or paste one prompt
 
-Copy the prompt in [INSTALL_PROMPT.md](INSTALL_PROMPT.md) into Claude.
+Copy the prompt in [INSTALL_PROMPT.md](../../INSTALL_PROMPT.md) into Claude.
 
 ## Before you connect
 
 - A ChefBear account: get [ChefBear on the App Store](https://apps.apple.com/app/id6759192929)
   and sign in with Apple, Google or a verified email.
 - ChefBear 4.4 or later on your iPhone, to approve the connection.
-- Accounts in the mainland China service region can't connect ChefBear to
-  Claude.
+- Accounts in the mainland China service region can't connect ChefBear.
 
 ## What Claude can access
 
-Only your ChefBear menus, and only what you ask for: import menu photos you
-share as links, read a saved menu by its ID, and create or turn off a share
-link. The connector does not read your ChefBear taste profile, meal history
-or orders, does not create images, and never places orders or takes
+Only what you ask for, within the permissions you approve: your ChefBear
+menus (save, import, list, read, and turn share links on or off) and, only
+if you allow it separately, your taste profile. It can't place orders or take
 payments. Disconnect anytime in Claude, or in the ChefBear app under
 **Settings → Connected apps**.
 
-- Setup and help: https://chef-bear.com/claude/
-- Privacy: https://chef-bear.com/privacy/ · Terms: https://chef-bear.com/terms/
-- Support: https://chef-bear.com/support
-
-## Repository layout
-
-```
-.claude-plugin/marketplace.json            marketplace "chefbear"
-plugins/chefbear/.claude-plugin/plugin.json
-plugins/chefbear/.mcp.json                 ChefBear connector
-plugins/chefbear/skills/chefbear/SKILL.md  the skill
-plugins/chefbear/skills/chefbear/references/tools.md  tools, scopes, errors, links
-```
+- Setup and help: https://www.chef-bear.com/claude/
+- Privacy: https://www.chef-bear.com/privacy/ · Terms: https://www.chef-bear.com/terms/
+- Support: https://www.chef-bear.com/support
 
 MIT licensed.

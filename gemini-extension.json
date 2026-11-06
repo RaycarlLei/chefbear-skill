@@ -1,0 +1,10 @@
+{
+  "name": "chefbear",
+  "version": "1.1.0",
+  "description": "ChefBear MCP server: save, find, read and share your restaurant menus and pick dishes that suit your tastes. Needs a ChefBear account (iPhone app).",
+  "mcpServers": {
+    "chefbear": {
+      "httpUrl": "https://chef-bear.com/api/menu-sharing/mcp"
+    }
+  }
+}
