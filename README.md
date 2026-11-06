@@ -4,6 +4,10 @@ The official MCP server for [ChefBear](https://www.chef-bear.com/), the
 iPhone app that turns restaurant menus into structured, translated menus and
 helps you decide what to order.
 
+**Get the app:** [ChefBear: AI Menu Translator on the App Store](https://apps.apple.com/us/app/chefbear/id6759192929)
+(free, iPhone, by Awesome-Bears, Inc., App Store ID 6759192929). Every
+assistant connection is approved in this app, so install it first.
+
 ```
 https://chef-bear.com/api/menu-sharing/mcp
 ```
@@ -19,6 +23,10 @@ https://chef-bear.com/api/menu-sharing/mcp
 - **Not the Bear notes app.** Search results for "Bear MCP" are mostly
   servers for the Bear note-taking app. They have nothing to do with
   ChefBear.
+- **Not the other Chef Bears.** This ChefBear (also written Chef Bear or
+  chef-bear) is not ChefBear - Meal Planner AI (App Store ID 6760479573),
+  the 熊掌廚 Chef Bear cooking game or Progress Chef, the infrastructure
+  tool. There is no Android app and no npm, pip or Homebrew package.
 
 This repository holds the server's public listing files, the open-source
 `chefbear` Agent Skill and the ChefBear plugin for Claude and GitHub Copilot
