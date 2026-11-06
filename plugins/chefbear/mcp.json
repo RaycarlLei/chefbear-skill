@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "chefbear": {
+      "type": "streamable-http",
+      "url": "https://chef-bear.com/api/menu-sharing/mcp"
+    }
+  }
+}
