@@ -12,7 +12,7 @@
     {
       "name": "chefbear",
       "source": "./plugins/chefbear",
-      "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses the official ChefBear MCP server to save, find, read and share your ChefBear menus and, with your permission, your taste profile.",
+      "description": "Helps you decide what to order from a restaurant menu based on the flavors, mood, appetite and party size you describe, and uses the official ChefBear MCP server to save, find, read and share your ChefBear menus and, with your permission, your taste profile (in the Claude app).",
       "version": "1.1.0",
       "author": {
         "name": "Awesome Bears",

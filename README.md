@@ -36,7 +36,10 @@ To get the skill as well, add this repository as a plugin marketplace
 instead of the directory connector, so you don't end up with two ChefBear
 connectors: **Customize → Plugins → Add → Add marketplace**, choose
 **Add from a repository**, enter `RaycarlLei/chefbear-skill`, then install
-**ChefBear**.
+**ChefBear** and connect it, approving in the ChefBear app. Plugins need a
+paid Claude plan ([Use plugins in Claude](https://support.claude.com/en/articles/13837440))
+and work on the web and in Claude Desktop. On the Free plan, use the
+directory connector.
 
 ### Claude Code
 
@@ -44,7 +47,8 @@ connectors: **Customize → Plugins → Add → Add marketplace**, choose
 claude mcp add --transport http --scope user chefbear https://chef-bear.com/api/menu-sharing/mcp
 ```
 
-Then run `/mcp` in Claude Code, pick **chefbear** and choose
+Then start a new Claude Code session, run `/mcp`, pick **chefbear**
+(`plugin:chefbear:chefbear` when installed by the plugin) and choose
 **Authenticate**. Optionally, newer Claude Code versions can sign in from the
 shell instead with `claude mcp login chefbear`.
 
@@ -54,6 +58,10 @@ For the server and the skill together, install the plugin instead:
 claude plugin marketplace add RaycarlLei/chefbear-skill
 claude plugin install chefbear@chefbear
 ```
+
+Then start a new Claude Code session, run `/mcp`, pick **chefbear**
+(`plugin:chefbear:chefbear` when installed by the plugin), choose
+**Authenticate** and approve in the ChefBear app.
 
 ### ChatGPT and Codex
 
@@ -99,9 +107,10 @@ a Gemini CLI extension instead of running the command above:
 
 ### Google Antigravity
 
-Open the MCP servers manager (in the agent panel, **… → MCP Servers →
-Manage MCP Servers**), click **View raw config**, add `chefbear` under
-`mcpServers` next to any servers already there, and save:
+**Antigravity IDE** (version 2.6.0 or later; ChefBear accepts Antigravity
+only through its client metadata document): in the agent panel's **…** menu,
+open **MCP Servers → Manage MCP Servers → View raw config**, add `chefbear`
+under `mcpServers` next to any servers already there, and save:
 
 ```json
 {
@@ -111,18 +120,21 @@ Manage MCP Servers**), click **View raw config**, add `chefbear` under
 }
 ```
 
-When Antigravity asks, or from **Customizations → Installed → MCP Servers**,
-click **Authenticate** next to chefbear and finish signing in to ChefBear in
-your browser. Antigravity's callback page then shows an authorization code:
-paste it into Antigravity's own **Enter authorization code** field and click
-**Submit**. That code belongs to Antigravity's sign-in. It isn't ChefBear's
-3-digit code, and it never goes into a chat.
+**Antigravity App**: open **Customizations → Installed → MCP Servers**,
+click **Copy Config File Path**, and add the same `chefbear` entry to that
+file, keeping any servers already there.
+
+Then choose **Authenticate** for chefbear (in the App: **Customizations →
+Installed → MCP Servers → Authenticate**) and finish signing in to ChefBear
+in your browser. Antigravity's page then shows a code: paste it into
+Antigravity's own **Enter authorization code** field and click **Submit**.
+That code isn't ChefBear's 3-digit code, and it never goes into a chat.
 
 ### Other MCP clients
 
-Other MCP clients that sign in with OAuth and a localhost callback can add
-the server URL and sign in. If ChefBear's sign-in page turns your app away,
-use Claude, Claude Code or ChatGPT instead.
+Other MCP clients that sign in with OAuth and return to a localhost callback
+can add the server URL and sign in. If your app can't finish signing in to
+ChefBear, use Claude, Claude Code or ChatGPT instead.
 
 ### Check the connection
 

@@ -4,6 +4,11 @@ Paste one of these into Claude. In Claude Code it installs the plugin itself;
 in the Claude app or claude.ai it guides you through two short steps. The
 same prompts are on ChefBear's setup guide, https://www.chef-bear.com/ai/.
 
+Plugins need a paid Claude plan
+([Use plugins in Claude](https://support.claude.com/en/articles/13837440)).
+On the Free plan, add ChefBear from the
+[Claude directory](https://claude.ai/directory/chefbear) instead.
+
 For other AI apps, see the [README](README.md#install) or give your agent
 [llms-install.md](llms-install.md).
 
@@ -15,10 +20,10 @@ Please set up the open-source ChefBear plugin for me: https://github.com/Raycarl
 If you can run terminal commands (Claude Code):
 1. Run: claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
 2. Trust ChefBear's read-only tools: add "mcp__plugin_chefbear_chefbear__get_menu", "mcp__plugin_chefbear_chefbear__get_import_status" and "mcp__plugin_chefbear_chefbear__connection_status" to permissions.allow in ~/.claude/settings.json, keeping existing entries. Leave importing and sharing to ask each time.
-3. Tell me to start a new session, run /mcp, choose chefbear → Authenticate and approve in the ChefBear app with the code shown on the connect page.
+3. Tell me to start a new session, run /mcp, choose chefbear (shown as plugin:chefbear:chefbear) → Authenticate and approve in the ChefBear app with the code shown on the connect page.
 
 Otherwise (Claude app or claude.ai), guide me step by step:
-1. Customize → Plugins → Add → Add marketplace → enter RaycarlLei/chefbear-skill, then install ChefBear and connect it, approving in the ChefBear app.
+1. Customize → Plugins → Add → Add marketplace → Add from a repository → enter RaycarlLei/chefbear-skill. Then select ChefBear, click Add and connect it, approving in the ChefBear app. Use the plugin instead of the ChefBear connector from Claude's directory, not both.
 2. When you first ask to read a ChefBear menu, I can choose "Always allow".
 Once it's connected, call connection_status {} and report only what actually worked.
 ```
@@ -32,10 +37,10 @@ Once it's connected, call connection_status {} and report only what actually wor
 如果你能运行终端命令（Claude Code）：
 1. 运行：claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
 2. 信任 ChefBear 的只读工具：在 ~/.claude/settings.json 的 permissions.allow 中加入 "mcp__plugin_chefbear_chefbear__get_menu"、"mcp__plugin_chefbear_chefbear__get_import_status" 和 "mcp__plugin_chefbear_chefbear__connection_status"，保留原有内容。导入和分享仍然每次询问。
-3. 告诉我新开一个会话，运行 /mcp，选择 chefbear → Authenticate，然后在 ChefBear App 里输入连接页面上显示的验证码确认。
+3. 告诉我新开一个会话，运行 /mcp，选择 chefbear（显示为 plugin:chefbear:chefbear）→ Authenticate，然后在 ChefBear App 里输入连接页面上显示的验证码确认。
 
 否则（Claude App 或 claude.ai），一步步引导我：
-1. 自定义（Customize）→ 插件（Plugins）→ 添加（Add）→ 添加插件市场（Add marketplace）→ 输入 RaycarlLei/chefbear-skill，然后安装 ChefBear 并连接，在 ChefBear App 里确认。
+1. 自定义（Customize）→ 插件（Plugins）→ 添加（Add）→ 添加插件市场（Add marketplace）→ 从仓库添加（Add from a repository）→ 输入 RaycarlLei/chefbear-skill。然后选择 ChefBear，点添加（Add）并连接，在 ChefBear App 里确认。用这个插件代替 Claude 目录里的 ChefBear 连接器，两者不要同时添加。
 2. 你第一次请求读取 ChefBear 菜单时，我可以选择“始终允许”。
 连接成功后，调用 connection_status {}，只报告真正完成的步骤。
 ```
@@ -49,10 +54,10 @@ Once it's connected, call connection_status {} and report only what actually wor
 如果你可以執行終端機指令（Claude Code）：
 1. 執行：claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
 2. 信任 ChefBear 的唯讀工具：在 ~/.claude/settings.json 的 permissions.allow 中加入 "mcp__plugin_chefbear_chefbear__get_menu"、"mcp__plugin_chefbear_chefbear__get_import_status" 和 "mcp__plugin_chefbear_chefbear__connection_status"，保留原有項目。匯入和分享仍然每次詢問。
-3. 告訴我開啟新的工作階段，執行 /mcp，選擇 chefbear → Authenticate，然後在 ChefBear App 中輸入連線頁面上顯示的驗證碼來核准。
+3. 告訴我開啟新的工作階段，執行 /mcp，選擇 chefbear（顯示為 plugin:chefbear:chefbear）→ Authenticate，然後在 ChefBear App 中輸入連線頁面上顯示的驗證碼來核准。
 
 否則（Claude App 或 claude.ai），請一步一步引導我：
-1. 自訂（Customize）→ 外掛程式（Plugins）→ 新增（Add）→ 新增市集（Add marketplace）→ 輸入 RaycarlLei/chefbear-skill，然後安裝 ChefBear 並連線，在 ChefBear App 中核准。
+1. 自訂（Customize）→ 外掛程式（Plugins）→ 新增（Add）→ 新增市集（Add marketplace）→ 從存放庫新增（Add from a repository）→ 輸入 RaycarlLei/chefbear-skill。然後選擇 ChefBear，點新增（Add）並連線，在 ChefBear App 中核准。請用這個外掛程式取代 Claude 目錄中的 ChefBear 連接器，兩者不要同時加入。
 2. 你第一次要求讀取 ChefBear 菜單時，我可以選擇「一律允許」。
 連線成功後，呼叫 connection_status {}，只回報確實完成的步驟。
 ```

@@ -37,7 +37,10 @@ chat and helps you choose.
 ### Claude app and claude.ai
 
 Install the plugin instead of the directory connector, so you don't end up
-with two ChefBear connectors.
+with two ChefBear connectors. Plugins need a paid Claude plan
+([Use plugins in Claude](https://support.claude.com/en/articles/13837440))
+and work on the web and in Claude Desktop. On the Free plan, add ChefBear
+from the [Claude directory](https://claude.ai/directory/chefbear) instead.
 
 1. Open **Customize → Plugins → Add → Add marketplace**, choose
    **Add from a repository** and enter `RaycarlLei/chefbear-skill`.
@@ -50,7 +53,8 @@ claude plugin marketplace add RaycarlLei/chefbear-skill
 claude plugin install chefbear@chefbear
 ```
 
-Then start a new Claude Code session, run `/mcp`, pick **chefbear**, choose
+Then start a new Claude Code session, run `/mcp`, pick **chefbear**
+(`plugin:chefbear:chefbear` when installed by the plugin), choose
 **Authenticate**, and approve in the ChefBear app with the code shown on
 ChefBear's sign-in page.
 

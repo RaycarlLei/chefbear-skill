@@ -124,9 +124,10 @@ ChefBear tool ranked or excluded dishes for you:
   them to send any message (for example "ready?") in a minute so you can
   check again, and do not answer menu questions from guesses meanwhile.
   Never loop on it.
-- **Repeats are safe.** Repeating the same `requestId` with the same photos
-  or dishes returns the same job or menu, so a dropped call never saves
-  twice. Use a new `requestId` for a different menu and after a failure.
+- **Repeating a call.** Repeating the same `requestId` with the same photos
+  or dishes returns the same job or menu. A repeat never saves twice (each
+  call still counts toward the daily limit). Use a new `requestId` for a
+  different menu and after a failure.
 - **When it is ready**, `get_import_status` returns the `menuId` and a
   private `menuUrl`; call `get_menu` and continue helping them choose.
 - **Failures.** Tool errors are readable sentences: relay what matters in a
@@ -211,20 +212,22 @@ the whole request needs their account (for example "share my ChefBear
 menu"), give these steps as the answer, and offer to help from a menu photo
 or text in the meantime:
 
-- **Claude Code:** with this plugin installed, run `/mcp`, pick `chefbear`
-  and choose Authenticate. Without it, run
+- **Claude Code:** with this plugin installed, start a new session, run
+  `/mcp`, pick `chefbear` (`plugin:chefbear:chefbear` when installed by the
+  plugin) and choose Authenticate. Without it, run
   `claude mcp add --transport http --scope user chefbear https://chef-bear.com/api/menu-sharing/mcp`,
-  then `/mcp`, pick `chefbear` and choose Authenticate.
+  then start a new session, run `/mcp`, pick `chefbear` and choose
+  Authenticate.
 - **Claude app / claude.ai:** add ChefBear from
   `https://claude.ai/directory/chefbear`, or (Pro or Max) Customize →
   Connectors, then + Add, then Add custom connector, with
   `https://chef-bear.com/api/menu-sharing/mcp`.
 - **ChatGPT:** install the ChefBear plugin from ChatGPT's plugin directory.
 - **Other apps** (Codex, VS Code, Cursor, Gemini CLI, Antigravity and other
-  MCP clients that sign in with OAuth and a localhost callback): add the
-  server URL above as a remote MCP server; per-app steps are in
-  `https://github.com/RaycarlLei/chefbear-skill#install`. If ChefBear's
-  sign-in page turns the app away, suggest Claude, Claude Code or ChatGPT.
+  MCP clients that sign in with OAuth and return to a localhost callback):
+  add the server URL above as a remote MCP server; per-app steps are in
+  `https://github.com/RaycarlLei/chefbear-skill#install`. If their app can't
+  finish signing in to ChefBear, suggest Claude, Claude Code or ChatGPT.
 - The user approves the connection in the ChefBear iPhone app (version 4.4 or
   later) by typing the 3-digit code shown on ChefBear's sign-in page.
   Accounts in the mainland China service region cannot connect.
