@@ -71,7 +71,8 @@ copilot plugin install chefbear@chefbear
 Copilot CLI reads this plugin's Agent Plugins files (`plugin.json` and
 `mcp.json`). When it first connects to ChefBear, finish signing in to
 ChefBear in your browser and approve in the ChefBear app. The taste-profile
-tools are offered only in Claude for now. If Copilot CLI can't finish
+tools (`get_taste_profile`, `update_taste_profile` and `recommend_dishes`)
+are offered only in Claude for now. If Copilot CLI can't finish
 signing in to ChefBear, use Claude, Claude Code or ChatGPT instead.
 
 ### Or paste one prompt

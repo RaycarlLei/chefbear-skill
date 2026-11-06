@@ -105,8 +105,9 @@ copilot plugin install chefbear@chefbear
 The plugin follows [Agent Plugins](https://agent-plugins.org/) 1.0
 (`plugin.json` and `mcp.json` in `plugins/chefbear`). When Copilot CLI first
 connects to ChefBear, finish signing in to ChefBear in your browser and
-approve in the ChefBear app. The taste-profile tools are offered only in
-Claude for now. If Copilot CLI can't finish signing in to ChefBear, use
+approve in the ChefBear app. The taste-profile tools (`get_taste_profile`,
+`update_taste_profile` and `recommend_dishes`) are offered only in Claude
+for now. If Copilot CLI can't finish signing in to ChefBear, use
 Claude, Claude Code or ChatGPT instead.
 
 ### Cursor
@@ -183,7 +184,7 @@ with no account or menu data.
 | `revoke_menu_share` | Turns a public link off. The private menu stays. |
 | `get_taste_profile` | Reads the likes, dislikes, allergies, diets and taste levels you saved in ChefBear. In the Claude app, when ChefBear offers it. |
 | `update_taste_profile` | Adds or removes what you ask it to remember about your tastes, and records dishes you picked or turned down. In the Claude app, when ChefBear offers it. |
-| `recommend_dishes` | Ranks a saved menu's dishes against what you said and, in the Claude app, your saved taste profile, and lists dishes whose menu text mentions an allergy or dislike as excluded. |
+| `recommend_dishes` | Ranks a saved menu's dishes against what you said and your saved taste profile, and lists dishes whose menu text mentions an allergy or dislike as excluded. In the Claude app, when ChefBear offers it. |
 | `connection_status` | Shows this connection's permissions and app name. |
 
 `initialize` and `tools/list` work without signing in; every tool call needs
@@ -191,8 +192,8 @@ a signed-in connection. Listing menus needs its own permission, which you
 approve separately. Your saved taste profile (`get_taste_profile`,
 `update_taste_profile`, and the saved-profile part of `recommend_dishes`)
 works only in the Claude app, when ChefBear offers it, never in Claude Code,
-the Codex CLI or clients that register themselves. Some apps don't list
-`recommend_dishes` at all. ChefBear doesn't find, book or order from
+the Codex CLI or clients that register themselves. Other apps don't list
+`recommend_dishes` at all yet. ChefBear doesn't find, book or order from
 restaurants, take payments or give recipes.
 
 ## Agent Skill and plugin
