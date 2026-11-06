@@ -10,9 +10,9 @@
   "homepage": "https://github.com/RaycarlLei/chefbear-skill",
   "repository": "https://github.com/RaycarlLei/chefbear-skill",
   "license": "MIT",
-  "privacyPolicyUrl": "https://chef-bear.com/privacy/",
-  "termsOfServiceUrl": "https://chef-bear.com/terms/",
-  "supportUrl": "https://chef-bear.com/support",
-  "documentationUrl": "https://chef-bear.com/claude/",
+  "privacyPolicyUrl": "https://www.chef-bear.com/privacy/",
+  "termsOfServiceUrl": "https://www.chef-bear.com/terms/",
+  "supportUrl": "https://www.chef-bear.com/support",
+  "documentationUrl": "https://www.chef-bear.com/claude/",
   "keywords": ["restaurant", "menu", "food", "ordering", "travel", "mcp"]
 }

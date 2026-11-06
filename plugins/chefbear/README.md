@@ -22,13 +22,12 @@ see the [main README](../../README.md#install).
 | share a link to a menu photo and ask ChefBear to read it | imports it into a private menu (uses one scan from your allowance) |
 | mention a menu you saved in ChefBear | finds it among your saved menus and helps you pick |
 | send a ChefBear share link | reads what the link shows |
-| ask what would suit you | uses the taste profile you saved in ChefBear, if you allowed it |
-| ask it to remember a taste or an allergy | adds it to your ChefBear taste profile |
+| ask what would suit you | uses the taste profile you saved in ChefBear, if you allowed it (in the Claude app, when ChefBear offers it) |
+| ask it to remember a taste or an allergy | adds it to your ChefBear taste profile (in the Claude app, when ChefBear offers it) |
 | ask to share a menu, or to stop sharing | turns a public link on, after telling you anyone with it can see the dishes and prices, or off |
 
-Claude works from what the menu says. It never claims a dish is safe for an
-allergy or diet, and reminds you to confirm ingredients with the restaurant
-when you mention one.
+Claude is told to work only from the menu text and to remind you to confirm
+allergens and ingredients with the restaurant.
 
 The plugin helps even before you connect: Claude still reads menus in the
 chat and helps you choose.
@@ -37,8 +36,11 @@ chat and helps you choose.
 
 ### Claude app and claude.ai
 
-1. Open **Customize → Plugins → Add → Add marketplace** and enter
-   `RaycarlLei/chefbear-skill`.
+Install the plugin instead of the directory connector, so you don't end up
+with two ChefBear connectors.
+
+1. Open **Customize → Plugins → Add → Add marketplace**, choose
+   **Add from a repository** and enter `RaycarlLei/chefbear-skill`.
 2. Install **ChefBear**, then connect it and approve in the ChefBear app.
 
 ### Claude Code
@@ -48,8 +50,9 @@ claude plugin marketplace add RaycarlLei/chefbear-skill
 claude plugin install chefbear@chefbear
 ```
 
-Then run `/mcp`, choose **chefbear** → **Authenticate**, and approve in the
-ChefBear app with the code shown on ChefBear's sign-in page.
+Then start a new Claude Code session, run `/mcp`, pick **chefbear**, choose
+**Authenticate**, and approve in the ChefBear app with the code shown on
+ChefBear's sign-in page.
 
 ### Or paste one prompt
 
@@ -66,9 +69,10 @@ Copy the prompt in [INSTALL_PROMPT.md](../../INSTALL_PROMPT.md) into Claude.
 
 Only what you ask for, within the permissions you approve: your ChefBear
 menus (save, import, list, read, and turn share links on or off) and, only
-if you allow it separately, your taste profile. It can't place orders or take
-payments. Disconnect anytime in Claude, or in the ChefBear app under
-**Settings → Connected apps**.
+in the Claude app and if you allow it separately, your taste profile. It
+can't place orders or take payments. Disconnect anytime in Claude, or in the
+ChefBear app under **Settings › AI connections** (**Connected apps** in older
+versions).
 
 - Setup and help: https://www.chef-bear.com/claude/
 - Privacy: https://www.chef-bear.com/privacy/ · Terms: https://www.chef-bear.com/terms/

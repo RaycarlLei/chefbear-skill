@@ -84,7 +84,7 @@ ChefBear tool ranked or excluded dishes for you:
 | The user | Do |
 |---|---|
 | shares a menu photo or pastes menu text **in the chat** and just wants help choosing | Read it yourself and help them choose; no tool call |
-| wants a menu from the chat saved in ChefBear | `save_menu` with the dishes you read (section 3a). Instant, no recognition, no allowance |
+| wants a menu from the chat saved in ChefBear | `save_menu` with the dishes you read (section 3a). Instant, no recognition, no allowance; up to 30 saves a day per account |
 | wants ChefBear itself to recognize menu photos (public `https://` links, or files where the app can pass them) | `import_menu`, then `get_import_status` |
 | refers to a saved menu without a link ("the menu I scanned last night", "my ChefBear menus") | `list_menus`, then `get_menu` with the chosen `menuId` |
 | gives a `chef-bear.com/my-menu/{menuId}` link or a `menuId` | `get_menu`, then help them choose |
@@ -131,8 +131,8 @@ ChefBear tool ranked or excluded dishes for you:
   private `menuUrl`; call `get_menu` and continue helping them choose.
 - **Failures.** Tool errors are readable sentences: relay what matters in a
   short line (a photo that could not be downloaded, the allowance used up, too
-  many imports at once, wait a minute) and continue from what you have. Never
-  invent a menu, and never retry in a loop.
+  many imports at once, the day's saves used up, wait a minute) and continue
+  from what you have. Never invent a menu, and never retry in a loop.
 
 ## 4. Taste profile
 
@@ -154,9 +154,11 @@ ChefBear tool ranked or excluded dishes for you:
   `requestId`. Record only what they said about themselves in this
   conversation; never infer an allergy, diet or preference, and never record
   a choice they did not confirm. Tell them in one line what you saved.
-- The taste tools need their own permissions, which not every connection
-  has. When a call says the connection lacks one, ask the user about their
-  tastes in the chat instead.
+- The saved taste profile works only in the Claude app, when ChefBear
+  offers it, and needs its own permissions; Claude Code, the Codex CLI and
+  self-registered clients never get it, and some apps don't list these tools
+  at all. When a taste tool is missing or a call says the connection lacks
+  permission, ask the user about their tastes in the chat instead.
 
 ## 5. Sharing
 
@@ -209,15 +211,20 @@ the whole request needs their account (for example "share my ChefBear
 menu"), give these steps as the answer, and offer to help from a menu photo
 or text in the meantime:
 
-- **Claude Code:** `/mcp` → `chefbear` → Authenticate (installed with this
-  plugin), or `claude mcp add --transport http --scope user chefbear https://chef-bear.com/api/menu-sharing/mcp`.
+- **Claude Code:** with this plugin installed, run `/mcp`, pick `chefbear`
+  and choose Authenticate. Without it, run
+  `claude mcp add --transport http --scope user chefbear https://chef-bear.com/api/menu-sharing/mcp`,
+  then `/mcp`, pick `chefbear` and choose Authenticate.
 - **Claude app / claude.ai:** add ChefBear from
-  `https://claude.ai/directory/chefbear`, or Customize → Connectors → Add →
-  Custom → Web with `https://chef-bear.com/api/menu-sharing/mcp`.
+  `https://claude.ai/directory/chefbear`, or (Pro or Max) Customize →
+  Connectors, then + Add, then Add custom connector, with
+  `https://chef-bear.com/api/menu-sharing/mcp`.
 - **ChatGPT:** install the ChefBear plugin from ChatGPT's plugin directory.
 - **Other apps** (Codex, VS Code, Cursor, Gemini CLI, Antigravity and other
-  MCP clients with OAuth): add the server URL above as a remote MCP server;
-  per-app steps are in `https://github.com/RaycarlLei/chefbear-skill#install`.
+  MCP clients that sign in with OAuth and a localhost callback): add the
+  server URL above as a remote MCP server; per-app steps are in
+  `https://github.com/RaycarlLei/chefbear-skill#install`. If ChefBear's
+  sign-in page turns the app away, suggest Claude, Claude Code or ChatGPT.
 - The user approves the connection in the ChefBear iPhone app (version 4.4 or
   later) by typing the 3-digit code shown on ChefBear's sign-in page.
   Accounts in the mainland China service region cannot connect.

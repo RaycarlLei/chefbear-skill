@@ -27,13 +27,16 @@ This repository holds the server's public listing files, the open-source
 
 ### Claude (claude.ai, desktop and mobile)
 
-Add ChefBear from the [Claude directory](https://claude.ai/directory/chefbear),
-or open **Customize → Connectors → Add → Custom → Web** and paste the server
-URL.
+Add ChefBear from the [Claude directory](https://claude.ai/directory/chefbear).
+To add it by URL on Pro or Max, open **Customize → Connectors**, click
+**+ Add**, then **Add custom connector**, and paste the server URL. On Team
+and Enterprise, an Owner adds it under **Organization settings → Connectors**.
 
-To get the skill as well, add this repository as a plugin marketplace:
-**Customize → Plugins → Add → Add marketplace**, enter
-`RaycarlLei/chefbear-skill`, then install **ChefBear**.
+To get the skill as well, add this repository as a plugin marketplace
+instead of the directory connector, so you don't end up with two ChefBear
+connectors: **Customize → Plugins → Add → Add marketplace**, choose
+**Add from a repository**, enter `RaycarlLei/chefbear-skill`, then install
+**ChefBear**.
 
 ### Claude Code
 
@@ -41,9 +44,9 @@ To get the skill as well, add this repository as a plugin marketplace:
 claude mcp add --transport http --scope user chefbear https://chef-bear.com/api/menu-sharing/mcp
 ```
 
-Then run `/mcp` in Claude Code, choose **chefbear** and **Authenticate**.
-Recent versions can also sign in from the shell with
-`claude mcp login chefbear`.
+Then run `/mcp` in Claude Code, pick **chefbear** and choose
+**Authenticate**. Optionally, newer Claude Code versions can sign in from the
+shell instead with `claude mcp login chefbear`.
 
 For the server and the skill together, install the plugin instead:
 
@@ -90,14 +93,15 @@ or add this to `~/.cursor/mcp.json`:
 gemini mcp add --scope user --transport http chefbear https://chef-bear.com/api/menu-sharing/mcp
 ```
 
-Then run `/mcp auth chefbear` in Gemini CLI. You can also install this
-repository as an extension:
+Then run `/mcp auth chefbear` in Gemini CLI. Or install this repository as
+a Gemini CLI extension instead of running the command above:
 `gemini extensions install https://github.com/RaycarlLei/chefbear-skill`.
 
 ### Google Antigravity
 
-Add this to `~/.gemini/config/mcp_config.json`, or in the agent panel open
-**… → MCP Servers → Manage MCP Servers → View raw config**:
+Open the MCP servers manager (in the agent panel, **… → MCP Servers →
+Manage MCP Servers**), click **View raw config**, add `chefbear` under
+`mcpServers` next to any servers already there, and save:
 
 ```json
 {
@@ -107,14 +111,18 @@ Add this to `~/.gemini/config/mcp_config.json`, or in the agent panel open
 }
 ```
 
-In the Antigravity app, open **Customizations → Installed** and click
-**Authenticate** next to chefbear under **MCP Servers**.
+When Antigravity asks, or from **Customizations → Installed → MCP Servers**,
+click **Authenticate** next to chefbear and finish signing in to ChefBear in
+your browser. Antigravity's callback page then shows an authorization code:
+paste it into Antigravity's own **Enter authorization code** field and click
+**Submit**. That code belongs to Antigravity's sign-in. It isn't ChefBear's
+3-digit code, and it never goes into a chat.
 
 ### Other MCP clients
 
-Any client that supports remote Streamable HTTP servers with OAuth can add
+Other MCP clients that sign in with OAuth and a localhost callback can add
 the server URL and sign in. If ChefBear's sign-in page turns your app away,
-use one of the clients above.
+use Claude, Claude Code or ChatGPT instead.
 
 ### Check the connection
 
@@ -128,22 +136,25 @@ with no account or menu data.
 |---|---|
 | `import_menu` | Creates a private menu from 1 to 5 menu photos (public `https://` links, or uploaded files where the app supports them). Uses one recognition from your allowance. |
 | `get_import_status` | Says whether an import is pending, ready (with the menu ID and a private link) or failed. |
-| `save_menu` | Saves dishes the assistant has already read, for example from a photo in the chat, as a private menu at once. No recognition, no allowance. |
+| `save_menu` | Saves dishes the assistant has already read, for example from a photo in the chat, as a private menu at once. No recognition, no allowance; up to 30 saves a day per account. |
 | `list_menus` | Lists your saved menus, newest first, so the assistant can find the one you mean. |
 | `get_menu` | Reads a saved menu: dish names, short descriptions, categories and prices. |
 | `get_shared_menu` | Reads what a `https://chef-bear.com/m/` share link shows. |
 | `share_menu` | Turns on a public link for a menu. Anyone with the link sees the dishes and prices, not the photos. |
 | `revoke_menu_share` | Turns a public link off. The private menu stays. |
-| `get_taste_profile` | Reads the likes, dislikes, allergies, diets and taste levels you saved in ChefBear. |
-| `update_taste_profile` | Adds or removes what you ask it to remember about your tastes, and records dishes you picked or turned down. |
-| `recommend_dishes` | Ranks a saved menu's dishes against your taste profile and what you said, and lists dishes whose menu text mentions an allergy or dislike as excluded. |
+| `get_taste_profile` | Reads the likes, dislikes, allergies, diets and taste levels you saved in ChefBear. In the Claude app, when ChefBear offers it. |
+| `update_taste_profile` | Adds or removes what you ask it to remember about your tastes, and records dishes you picked or turned down. In the Claude app, when ChefBear offers it. |
+| `recommend_dishes` | Ranks a saved menu's dishes against what you said and, in the Claude app, your saved taste profile, and lists dishes whose menu text mentions an allergy or dislike as excluded. |
 | `connection_status` | Shows this connection's permissions and app name. |
 
 `initialize` and `tools/list` work without signing in; every tool call needs
-a signed-in connection. Listing menus and the taste profile tools need their
-own permissions, which you approve separately and which ChefBear may not
-offer to every app. ChefBear doesn't find, book or order from restaurants,
-take payments or give recipes.
+a signed-in connection. Listing menus needs its own permission, which you
+approve separately. Your saved taste profile (`get_taste_profile`,
+`update_taste_profile`, and the saved-profile part of `recommend_dishes`)
+works only in the Claude app, when ChefBear offers it, never in Claude Code,
+the Codex CLI or clients that register themselves. Some apps don't list
+`recommend_dishes` at all. ChefBear doesn't find, book or order from
+restaurants, take payments or give recipes.
 
 ## Agent Skill and plugin
 
@@ -168,9 +179,9 @@ the chat.
 
 - You approve every connection in the ChefBear app. No password, code or
   token goes into a chat. Disconnect anytime in your AI app, or in ChefBear
-  under **Settings → Connected apps**.
-- A connection reaches your ChefBear menus and, only if you allow it, your
-  taste profile. It can't place orders or take payments.
+  under **Settings › AI connections** (**Connected apps** in older versions).
+- A connection reaches your ChefBear menus and, only if you allow it in the
+  Claude app, your taste profile. It can't place orders or take payments.
 - Dish details come from the restaurant's menu. Confirm allergens and
   ingredients with the restaurant.
 
