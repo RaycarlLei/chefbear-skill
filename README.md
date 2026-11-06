@@ -21,7 +21,9 @@ https://chef-bear.com/api/menu-sharing/mcp
   ChefBear.
 
 This repository holds the server's public listing files, the open-source
-`chefbear` Agent Skill and the ChefBear plugin for Claude (MIT).
+`chefbear` Agent Skill and the ChefBear plugin for Claude and GitHub Copilot
+CLI (MIT). The ChefBear app and its MCP server are a hosted, proprietary
+service; only the files in this repository are MIT licensed.
 
 ## Install
 
@@ -82,6 +84,22 @@ or run:
 ```
 code --add-mcp '{"name":"chefbear","type":"http","url":"https://chef-bear.com/api/menu-sharing/mcp"}'
 ```
+
+### GitHub Copilot CLI
+
+For the server and the skill together, install the plugin:
+
+```
+copilot plugin marketplace add RaycarlLei/chefbear-skill
+copilot plugin install chefbear@chefbear
+```
+
+The plugin follows [Agent Plugins](https://agent-plugins.org/) 1.0
+(`plugin.json` and `mcp.json` in `plugins/chefbear`). When Copilot CLI first
+connects to ChefBear, finish signing in to ChefBear in your browser and
+approve in the ChefBear app. The taste-profile tools are offered only in
+Claude for now. If Copilot CLI can't finish signing in to ChefBear, use
+Claude, Claude Code or ChatGPT instead.
 
 ### Cursor
 
@@ -184,6 +202,8 @@ the chat.
 | `gemini-extension.json` | Gemini CLI extension |
 | `.claude-plugin/marketplace.json` | Claude plugin marketplace `chefbear` |
 | `plugins/chefbear/.mcp.json` | The server, for the Claude plugin |
+| `plugins/chefbear/plugin.json` | Agent Plugins 1.0 manifest, for GitHub Copilot CLI and other Agent Plugins clients |
+| `plugins/chefbear/mcp.json` | The server, for Agent Plugins clients |
 | `plugins/chefbear/skills/chefbear/SKILL.md` | The skill |
 | `plugins/chefbear/skills/chefbear/references/tools.md` | Tools, permissions, errors and links |
 | `INSTALL_PROMPT.md` | A prompt that installs the Claude plugin for you |

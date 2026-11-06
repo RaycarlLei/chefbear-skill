@@ -1,6 +1,6 @@
-# ChefBear plugin for Claude
+# ChefBear plugin for Claude and GitHub Copilot CLI
 
-Open-source Claude plugin for [ChefBear](https://www.chef-bear.com/), the
+Open-source (MIT) plugin for [ChefBear](https://www.chef-bear.com/), the
 iPhone app that turns restaurant menus into structured, translated menus and
 helps you decide what to order. It adds:
 
@@ -9,6 +9,9 @@ helps you decide what to order. It adds:
   app. No password, code or token ever goes into a chat.
 - **The `chefbear` skill**, which tells Claude when and how to help you
   choose from a menu, without you having to mention ChefBear.
+
+The ChefBear app and its MCP server are a hosted, proprietary service of
+Awesome-Bears, Inc.; only this plugin and the skill are MIT licensed.
 
 For other AI apps (ChatGPT, Codex, VS Code, Cursor, Gemini CLI, Antigravity),
 see the [main README](../../README.md#install).
@@ -57,6 +60,19 @@ Then start a new Claude Code session, run `/mcp`, pick **chefbear**
 (`plugin:chefbear:chefbear` when installed by the plugin), choose
 **Authenticate**, and approve in the ChefBear app with the code shown on
 ChefBear's sign-in page.
+
+### GitHub Copilot CLI
+
+```
+copilot plugin marketplace add RaycarlLei/chefbear-skill
+copilot plugin install chefbear@chefbear
+```
+
+Copilot CLI reads this plugin's Agent Plugins files (`plugin.json` and
+`mcp.json`). When it first connects to ChefBear, finish signing in to
+ChefBear in your browser and approve in the ChefBear app. The taste-profile
+tools are offered only in Claude for now. If Copilot CLI can't finish
+signing in to ChefBear, use Claude, Claude Code or ChatGPT instead.
 
 ### Or paste one prompt
 

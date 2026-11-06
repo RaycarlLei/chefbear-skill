@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "chefbear",
+  "version": "1.1.0",
+  "description": "Helps you decide what to order from a restaurant menu and connects ChefBear, the iPhone menu scanner by Awesome-Bears, Inc., through its hosted remote MCP server to save, import, find, read and share your ChefBear menus. Sign-in is OAuth, approved in the ChefBear iPhone app; it needs a free ChefBear account (accounts in the mainland China service region can't connect) and is not related to the Bear notes app.",
+  "author": {
+    "name": "Awesome-Bears, Inc.",
+    "url": "https://awesome-bears.com"
+  },
+  "homepage": "https://www.chef-bear.com/mcp/",
+  "repository": "https://github.com/RaycarlLei/chefbear-skill",
+  "license": "MIT",
+  "keywords": ["chefbear", "restaurant", "menu", "food", "dining", "travel", "mcp", "remote-mcp"]
+}
