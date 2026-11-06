@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.chef-bear/chefbear",
+  "title": "ChefBear",
+  "description": "Save, find, read and share your ChefBear restaurant menus and pick dishes that suit your tastes.",
+  "version": "1.4.1",
+  "websiteUrl": "https://www.chef-bear.com/mcp/",
+  "icons": [
+    {
+      "src": "https://chef-bear.com/images/app-icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://chef-bear.com/api/menu-sharing/mcp"
+    }
+  ]
+}
