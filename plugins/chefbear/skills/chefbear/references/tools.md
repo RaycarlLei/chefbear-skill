@@ -7,9 +7,9 @@ without a token answers HTTP 401 with
 `WWW-Authenticate: Bearer resource_metadata="https://chef-bear.com/.well-known/oauth-protected-resource/api/menu-sharing/mcp"`,
 and the client starts OAuth 2.1 with PKCE (S256) against the authorization
 server `https://chef-bear.com`, identifying itself with a Client ID Metadata
-Document or dynamic client registration. The user approves in the ChefBear
-iPhone app (4.4 or later) with the 3-digit code shown on ChefBear's sign-in
-page, and can disconnect in their AI app or in ChefBear under Settings › AI
+Document or dynamic client registration. The user signs in with Apple or Google
+on ChefBear's sign-in page (or approves in the ChefBear iPhone app, 4.4 or
+later), and can disconnect in their AI app or in ChefBear under Settings › AI
 connections (Connected apps in older versions).
 
 The server is the source of truth: always follow the live tool descriptions.

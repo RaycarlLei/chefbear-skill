@@ -15,12 +15,12 @@ For other AI apps, see the [README](README.md#install) or give your agent
 ## English
 
 ```
-Please set up the open-source ChefBear plugin for me: https://github.com/RaycarlLei/chefbear-skill (MIT). It adds the "chefbear" skill and the official ChefBear connector https://chef-bear.com/api/menu-sharing/mcp to Claude. I approve the connection in the ChefBear iPhone app, so never ask me for a password, code or token.
+Please set up the open-source ChefBear plugin for me: https://github.com/RaycarlLei/chefbear-skill (MIT). It adds the "chefbear" skill and the official ChefBear connector https://chef-bear.com/api/menu-sharing/mcp to Claude. I sign in on ChefBear's page with Apple or Google (or approve in the ChefBear iPhone app), so never ask me for a password, code or token.
 
 If you can run terminal commands (Claude Code):
 1. Run: claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
 2. Trust ChefBear's read-only tools: add "mcp__plugin_chefbear_chefbear__get_menu", "mcp__plugin_chefbear_chefbear__get_import_status" and "mcp__plugin_chefbear_chefbear__connection_status" to permissions.allow in ~/.claude/settings.json, keeping existing entries. Leave importing and sharing to ask each time.
-3. Tell me to start a new session, run /mcp, choose chefbear (shown as plugin:chefbear:chefbear) → Authenticate and approve in the ChefBear app with the code shown on the connect page.
+3. Tell me to start a new session, run /mcp, choose chefbear (shown as plugin:chefbear:chefbear) → Authenticate, then sign in with Apple or Google on ChefBear's page (or approve in the ChefBear app and confirm the code shown).
 
 Otherwise (Claude app or claude.ai), guide me step by step:
 1. Customize → Plugins → Add → Add marketplace → Add from a repository → enter RaycarlLei/chefbear-skill. Then select ChefBear, click Add and connect it, approving in the ChefBear app. Use the plugin instead of the ChefBear connector from Claude's directory, not both.
@@ -32,7 +32,7 @@ Once it's connected, call connection_status {} and report only what actually wor
 
 ```
 请帮我安装开源的 ChefBear 插件（MIT 许可）：https://github.com/RaycarlLei/chefbear-skill
-它会把 "chefbear" skill 和官方 ChefBear 连接器 https://chef-bear.com/api/menu-sharing/mcp 添加到 Claude。我会在 ChefBear iPhone App 里确认连接，所以绝不要向我索要密码、验证码或令牌。
+它会把 "chefbear" skill 和官方 ChefBear 连接器 https://chef-bear.com/api/menu-sharing/mcp 添加到 Claude。我会在 ChefBear 的登录页面用 Apple 或 Google 登录（也可以在 ChefBear iPhone App 里确认），所以绝不要向我索要密码、验证码或令牌。
 
 如果你能运行终端命令（Claude Code）：
 1. 运行：claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
@@ -49,7 +49,7 @@ Once it's connected, call connection_status {} and report only what actually wor
 
 ```
 請幫我安裝開源的 ChefBear 外掛程式（MIT 授權）：https://github.com/RaycarlLei/chefbear-skill
-它會把 "chefbear" skill 和官方 ChefBear 連接器 https://chef-bear.com/api/menu-sharing/mcp 加入 Claude。我會在 ChefBear iPhone App 中核准連線，所以絕對不要向我索取密碼、驗證碼或權杖。
+它會把 "chefbear" skill 和官方 ChefBear 連接器 https://chef-bear.com/api/menu-sharing/mcp 加入 Claude。我會在 ChefBear 的登入頁面用 Apple 或 Google 登入（也可以在 ChefBear iPhone App 中核准），所以絕對不要向我索取密碼、驗證碼或權杖。
 
 如果你可以執行終端機指令（Claude Code）：
 1. 執行：claude plugin marketplace add RaycarlLei/chefbear-skill && claude plugin install chefbear@chefbear
