@@ -228,8 +228,9 @@ or text in the meantime:
   add the server URL above as a remote MCP server; per-app steps are in
   `https://github.com/RaycarlLei/chefbear-skill#install`. If their app can't
   finish signing in to ChefBear, suggest Claude, Claude Code or ChatGPT.
-- The user approves the connection in the ChefBear iPhone app (version 4.4 or
-  later) by typing the 3-digit code shown on ChefBear's sign-in page.
+- The user signs in with Apple or Google on ChefBear's sign-in page (no app
+  needed), or approves in the ChefBear iPhone app (4.4 or later) if they have
+  it.
   Accounts in the mainland China service region cannot connect.
 - After they approve, call `connection_status` once to check it works.
 - End with the setup guide `https://www.chef-bear.com/ai/` as the one link

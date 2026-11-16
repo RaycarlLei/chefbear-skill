@@ -9,10 +9,13 @@ For an AI agent whose user asked to install the ChefBear MCP server.
   don't add a second one.
 - ChefBear is the restaurant menu app from chef-bear.com. It is not the Bear
   notes app: don't install a Bear notes MCP server instead.
-- The user needs a ChefBear account and the ChefBear iPhone app, version 4.4
-  or later, to approve the connection. Accounts in the mainland China service
-  region can't connect. Without an account, point the user to
-  https://apps.apple.com/app/id6759192929 and stop.
+- Anyone can connect. The user signs in with Apple or Google on ChefBear's
+  sign-in page, which creates a ChefBear account if they have none. The
+  iPhone app is optional; don't send the user to the App Store first.
+  Accounts in the mainland China service region can't connect.
+- The user asking you to install ChefBear is the go-ahead to add this one
+  server. Don't ask which ChefBear they mean, and don't ask for an API key:
+  there is none.
 
 ## Add the server
 
@@ -114,9 +117,10 @@ connection, and suggest Claude, Claude Code or ChatGPT instead.
 
 ## Sign in
 
-The client opens ChefBear's sign-in page in a browser. The page shows a
-3-digit code, and the user enters it in the ChefBear iPhone app and taps
-Allow. The user does this step, not you.
+The client opens ChefBear's sign-in page in a browser. The user signs in
+with Apple or Google there. If they have the ChefBear iPhone app (4.4 or
+later), they can approve in the app instead; coding tools on a computer then
+show a 3-digit match code to confirm. The user does this step, not you.
 
 ## Finish
 

@@ -47,7 +47,7 @@ from the [Claude directory](https://claude.ai/directory/chefbear) instead.
 
 1. Open **Customize → Plugins → Add → Add marketplace**, choose
    **Add from a repository** and enter `RaycarlLei/chefbear-skill`.
-2. Install **ChefBear**, then connect it and approve in the ChefBear app.
+2. Install **ChefBear**, then connect it and sign in with Apple or Google (or approve in the ChefBear app).
 
 ### Claude Code
 
@@ -58,7 +58,7 @@ claude plugin install chefbear@chefbear
 
 Then start a new Claude Code session, run `/mcp`, pick **chefbear**
 (`plugin:chefbear:chefbear` when installed by the plugin), choose
-**Authenticate**, and approve in the ChefBear app with the code shown on
+**Authenticate**, and sign in with Apple or Google, or approve in the ChefBear app with the code shown on
 ChefBear's sign-in page.
 
 ### GitHub Copilot CLI
@@ -70,7 +70,7 @@ copilot plugin install chefbear@chefbear
 
 Copilot CLI reads this plugin's Agent Plugins files (`plugin.json` and
 `mcp.json`). When it first connects to ChefBear, finish signing in to
-ChefBear in your browser and approve in the ChefBear app. The taste-profile
+ChefBear in your browser with Apple or Google (or approve in the ChefBear app). The taste-profile
 tools (`get_taste_profile`, `update_taste_profile` and `recommend_dishes`)
 are offered only in Claude for now. If Copilot CLI can't finish
 signing in to ChefBear, use Claude, Claude Code or ChatGPT instead.

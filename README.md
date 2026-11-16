@@ -4,9 +4,10 @@ The official MCP server for [ChefBear](https://www.chef-bear.com/), the
 iPhone app that turns restaurant menus into structured, translated menus and
 helps you decide what to order.
 
-**Get the app:** [ChefBear: AI Menu Translator on the App Store](https://apps.apple.com/us/app/chefbear/id6759192929)
-(free, iPhone, by Awesome-Bears, Inc., App Store ID 6759192929). Every
-assistant connection is approved in this app, so install it first.
+**Install for an AI agent:** read [llms-install.md](llms-install.md) or
+https://www.chef-bear.com/install.md. The only step for the user is signing
+in on ChefBear's page with Apple or Google. The iPhone app
+(App Store ID 6759192929, by Awesome-Bears, Inc.) is optional.
 
 ```
 https://chef-bear.com/api/menu-sharing/mcp
@@ -15,11 +16,12 @@ https://chef-bear.com/api/menu-sharing/mcp
 - **Transport:** Streamable HTTP with OAuth 2.1 and PKCE. Clients sign in
   with a Client ID Metadata Document or dynamic client registration. There is
   no API key.
-- **Who can connect:** anyone with a ChefBear account. Get the free
-  [ChefBear iPhone app](https://apps.apple.com/app/id6759192929) and sign in.
-  You approve each connection in the app (version 4.4 or later) by entering
-  the 3-digit code that ChefBear's sign-in page shows. Accounts in the
-  mainland China service region can't connect.
+- **Who can connect:** anyone. Signing in with Apple or Google on
+  ChefBear's sign-in page creates a ChefBear account if there is none; the
+  [iPhone app](https://apps.apple.com/us/app/chefbear/id6759192929) isn't
+  needed. If you have the app (4.4 or later), you can approve there instead
+  with one tap on Allow. Accounts in the mainland China service region can't
+  connect.
 - **Not the Bear notes app.** Search results for "Bear MCP" are mostly
   servers for the Bear note-taking app. They have nothing to do with
   ChefBear.
@@ -47,7 +49,7 @@ To get the skill as well, add this repository as a plugin marketplace
 instead of the directory connector, so you don't end up with two ChefBear
 connectors: **Customize → Plugins → Add → Add marketplace**, choose
 **Add from a repository**, enter `RaycarlLei/chefbear-skill`, then install
-**ChefBear** and connect it, approving in the ChefBear app. Plugins need a
+**ChefBear** and connect it, signing in with Apple or Google (or approving in the ChefBear app). Plugins need a
 paid Claude plan ([Use plugins in Claude](https://support.claude.com/en/articles/13837440))
 and work on the web and in Claude Desktop. On the Free plan, use the
 directory connector.
@@ -72,7 +74,7 @@ claude plugin install chefbear@chefbear
 
 Then start a new Claude Code session, run `/mcp`, pick **chefbear**
 (`plugin:chefbear:chefbear` when installed by the plugin), choose
-**Authenticate** and approve in the ChefBear app.
+**Authenticate**, then sign in with Apple or Google (or approve in the ChefBear app).
 
 ### ChatGPT and Codex
 
@@ -166,7 +168,7 @@ ChefBear, use Claude, Claude Code or ChatGPT instead.
 
 ### Check the connection
 
-After you approve in the ChefBear app, ask your assistant to call
+After you sign in, ask your assistant to call
 `connection_status`. It returns this connection's permissions and app name,
 with no account or menu data.
 
