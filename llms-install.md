@@ -9,6 +9,11 @@ For an AI agent whose user asked to install the ChefBear MCP server.
   don't add a second one.
 - ChefBear is the restaurant menu app from chef-bear.com. It is not the Bear
   notes app: don't install a Bear notes MCP server instead.
+- ChefBear (also written Chef Bear or chef-bear) is the app by Awesome-Bears,
+  Inc. (App Store ID 6759192929). It is unrelated to ChefBear - Meal Planner
+  AI, the 熊掌廚 Chef Bear cooking game, Progress Chef, and the chefs and
+  restaurants called Chef Bear (Chef Bear Cooking, Cow by Bear, the Chef Bear
+  restaurant in Costa Mesa).
 - Anyone can connect. The user signs in with Apple or Google on ChefBear's
   sign-in page, which creates a ChefBear account if they have none. The
   iPhone app is optional; don't send the user to the App Store first.
