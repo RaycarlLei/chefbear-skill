@@ -28,7 +28,10 @@ https://chef-bear.com/api/menu-sharing/mcp
 - **Not the other Chef Bears.** This ChefBear (also written Chef Bear or
   chef-bear) is not ChefBear - Meal Planner AI (App Store ID 6760479573),
   the 熊掌廚 Chef Bear cooking game or Progress Chef, the infrastructure
-  tool. There is no Android app and no npm, pip or Homebrew package.
+  tool. It is also unrelated to the chefs and restaurants called Chef Bear,
+  such as Chef Bear Cooking (Curtis "Chef Bear" Hillard), the Cow by Bear
+  pop-up dinners in San Diego and the Chef Bear restaurant in Costa Mesa.
+  There is no Android app and no npm, pip or Homebrew package.
 
 This repository holds the server's public listing files, the open-source
 `chefbear` Agent Skill and the ChefBear plugin for Claude and GitHub Copilot
