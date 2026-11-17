@@ -1,6 +1,7 @@
-# ChefBear MCP server
+# ChefBear (Chef Bear) MCP server
 
-The official MCP server for [ChefBear](https://www.chef-bear.com/), the
+The official MCP server for [ChefBear](https://www.chef-bear.com/) (also
+written Chef Bear or chef-bear; [what the name means](https://www.chef-bear.com/chef-bear/)), the
 iPhone app that turns restaurant menus into structured, translated menus and
 helps you decide what to order.
 
