@@ -18,6 +18,10 @@ For an AI agent whose user asked to install the ChefBear MCP server.
   sign-in page, which creates a ChefBear account if they have none. The
   iPhone app is optional; don't send the user to the App Store first.
   Accounts in the mainland China service region can't connect.
+- Grok (grok.com and the Grok app), the Gemini app, Perplexity and Meta AI
+  can't connect ChefBear yet. Don't add it there as a custom connector or
+  invent a Grok or Gemini command; give the iPhone App Store link instead
+  (https://apps.apple.com/us/app/chefbear/id6759192929).
 - The user asking you to install ChefBear is the go-ahead to add this one
   server. Don't ask which ChefBear they mean, and don't ask for an API key:
   there is none.
